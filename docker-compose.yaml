@@ -14,7 +14,7 @@ services:
       - private-network
 
   backend:
-    build: ./back-end
+    build: ./back-end/.
     container_name: back-vpn
     expose:
       - 8080
@@ -30,7 +30,7 @@ services:
       - SERVER_ADDRESS=${SERVER_ADDRESS}
 
   frontend:
-    image: ./front-end
+    build: ./front-end/.
     container_name: front-vpn
     expose:
       - 3000

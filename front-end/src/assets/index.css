@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/* base styles */
+* {
+  margin: 0;
+  font-family: "Quicksand";
+  color: #333;
+}
+.navbar {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+  border-bottom: 1px solid #f2f2f2;
+  cursor: pointer;
+}
+.navbar h1 {
+  color: #35a3f1;
+}
+.navbar .links {
+  margin-left: auto;
+}
+
+.navbar a {
+  margin-left: 16px;
+  text-decoration: none;
+  padding: 6px;
+}
+.navbar a:hover {
+  color: #35a3f1;
+}
+.content {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* blog previews / list */
+.blog-preview {
+  padding: 20px 16px;
+  /*margin: 20px 0;*/
+  border-top: 1px solid #dad8d8;
+  /*border-bottom: 1px solid #fafafa;*/
+}
+.blog-preview:hover {
+  box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+}
+.blog-preview h2 {
+  font-size: 20px;
+  color: #35a3f1;
+  margin-bottom: 8px;
+}
+
+.blog-preview-posted {
+  font-size: 13px;
+  float:right;
+  color: #676767;
+}
+
+.blog-preview span {
+  font-size: 14px;
+  color: #656565;
+  float:right;
+}
+
+.blog-preview a{
+  text-decoration: none;
+}
+
+/* blog details page */
+.blog-details h2 {
+  font-size: 20px;
+  color: #35a3f1;
+  margin-bottom: 10px;
+}
+.blog-details div {
+  margin: 20px 0;
+}
+.blog-details button {
+  background: #35a3f1;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* create new blog form */
+.create {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+.create label {
+  text-align: left;
+  display: block;
+}
+.create h2 {
+  font-size: 20px;
+  color: #35a3f1;
+  margin-bottom: 30px;
+}
+.create input, .create textarea, .create select {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+}
+.create button {
+  background: #35a3f1;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* login form */
+.login {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.login label {
+  text-align: left;
+  display: block;
+}
+
+.login h2 {
+  font-size: 20px;
+  color: #35a3f1;
+  margin-bottom: 30px;
+}
+
+.login input {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+}
+
+.login button {
+  background: #35a3f1;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login h4{
+  color: #ee2828;
+  border: 0;
+  padding: 8px;
+}
+
+/* signup form */
+.signup {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.signup label {
+  text-align: left;
+  display: block;
+}
+
+.signup h2 {
+  font-size: 20px;
+  color: #35a3f1;
+  margin-bottom: 30px;
+}
+
+.signup input {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+}
+
+.signup button {
+  background: #35a3f1;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.signup h4{
+  color: #ee2828;
+  border: 0;
+  padding: 8px;
+}
+
+.signup-link h5 {
+  font-size: 14px;
+  color: #988d8d;
+  padding: 8px;
+}
+
+/* profile stats */
+.profile table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.profile table, td {
+  border: 1px solid;
+}
+
+
+.profile td {
+  padding: 10px;
+}
+
+.stats h2 {
+  margin-top: 20px;
+}
+
+.mobile-btn {
+  display: none;
+}
+
+@media (max-width: 550px) {
+  .mobile-btn {
+    display: block;
+  }
+
+  .navbar-menu {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    height: 100vh;
+    background-color: #a5d3f6;
+    z-index: 10;
+    transition: left 1s;
+    font-size: 250%;
+  }
+
+  .navbar-menu-active {
+    left: -100%
+  }
+}
+
+
+.comment-list input {
+  border: 1px none #ddd;
+  border-bottom-style: solid;
+  width: 80%;
+  margin-right: 10px;
+}
+
+.comment-list button {
+  height: 30px;
+  background: #35a3f1;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.comment-view span {
+  margin-right: 15px;
+}
+
+.comment-posted {
+  font-size: 80%;
+  color: #9b9b9b;
+}
+
+.comment-body {
+  margin-top: 8px !important;
+}

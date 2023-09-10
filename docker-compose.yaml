@@ -1,0 +1,55 @@
+version: '3.8'
+services:
+  mongodb_container:
+    container_name: mongo-test
+    image: mongo:latest
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGODB_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGODB_PASSWORD}
+    ports:
+      - 27018:27017
+    volumes:
+      - mongodb_data_container:/data/db
+    networks:
+      - private-network
+
+  backend:
+    build: ./back-end
+    container_name: back-vpn
+    expose:
+      - 8080
+    ports:
+      - 8080:8080
+    depends_on:
+      - mongodb_container
+    networks:
+      - private-network
+    environment:
+      - MONGODB_USERNAME=${MONGODB_USERNAME}
+      - MONGODB_PASSWORD=${MONGODB_PASSWORD}
+      - SERVER_ADDRESS=${SERVER_ADDRESS}
+
+  frontend:
+    image: ./front-end
+    container_name: front-vpn
+    expose:
+      - 3000
+    ports:
+      - 3000:3000
+    depends_on:
+      - mongodb_container
+      - backend
+    networks:
+      - private-network
+    environment:
+      - SERVER_ADDRESS=${SERVER_ADDRESS}
+
+volumes:
+  mongodb_data_container:
+networks:
+  private-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.66.0.0/24
+          gateway: 10.66.0.1
